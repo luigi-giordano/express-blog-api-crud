@@ -1,38 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const posts = require('../posts');
+const postsControllers = require('../controllers/postControllers');
 
 //index
-router.get('/', (req,res) =>{
-  res.json (posts)
-})
+router.get('/', postsControllers.index)
 
 //show
-router.get('/:title', (req,res) =>{
-  const titolo = posts.find(post => {
-    return post.title === req.params.title
-  })
-  res.json (titolo)
-})
+router.get('/:id', postsControllers.show)
 
 //store
-router.post('/', (req,res) =>{
-  res.send('Creazione nuovo cibo')
-})
+router.post('/', postsControllers.store)
 
 //update
-router.put('/:id', (req,res)=>{
-  res.send(`Modifico l'elemento cibo con id ${req.params.id} `)
-})
+router.put('/:id', postsControllers.update)
 
 //modify
-router.patch('/:id', (req, res)=>{
-  res.send(`Modifico parzialmente l'elemento cibo con id ${req.params.id}`)
-})
+router.patch('/:id', postsControllers.modify)
 
 //destroy
-router.delete('/:id', (req,res)=>{
-  res.send(`Elimino l'elemento cibo con id ${req.params.id}`)
-})
+router.delete('/:id', postsControllers.destroy)
 
 module.exports = router
