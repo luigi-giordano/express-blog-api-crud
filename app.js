@@ -1,4 +1,3 @@
-const posts = require('./posts')
 const express = require('express');
 const app = express();
 const postsRouter = require('./routers/posts.js');
