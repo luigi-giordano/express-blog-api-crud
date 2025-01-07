@@ -1,11 +1,12 @@
-const post = require('../routers/posts')
+const posts = require('../data/posts')
 
 const index = (req, res) => {
-  res.send('Elenco dei cibi')
+  res.json(posts)
 }
 
 const show = (req, res) => {
-  res.send("Visualizzo un cibo in base all'id" + req.params.id)
+  const singoloPost = posts.find(singoloPost => singoloPost.id == req.params.id)
+  res.json(singoloPost)
 }
 
 const store = (req, res) => {
@@ -21,7 +22,22 @@ const modify = (req, res) => {
 }
 
 const destroy = (req, res) => {
-  res.send("Elimino un cibo in base all'id" + req.params.id)
+  const singoloPost = posts.find(singoloPost => singoloPost.id == req.params.id)
+  
+  // if ("singoloPost") {
+  //   res.status(404)
+  //   return res.json({
+  //     message: "Cibo non trovato",
+  //     status: 404,
+  //     error: "Not Found"
+  //   })
+  // }
+  // res.sendStatus(204)
+
+  posts.splice(posts.indexOf(singoloPost), 1)
+  console.log(posts);
+  res.sendStatus(204)
+  
 }
 
 module.exports = {

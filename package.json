@@ -1,7 +1,8 @@
 {
-  "name": "express-blog-routing",
+  "name": "express-blog-api-crud",
   "version": "1.0.0",
-  "main": "posts.js",
+  "description": "**Milestone 1** Come prima cosa, creiamo un controller per i nostri post, in una cartella `controllers.` All’interno, prepariamo tutte le funzioni necessarie e copiamo in ciascuna la logica delle funzioni che attualmente si trovano nel router (al momento restituiscono solo dei messaggi). Poi torniamo sul file delle rotte. Qui importiamo le funzioni dichiarate nel controller e le associamo alle varie rotte, come visto in classe. Testiamo su postman/thunder-client se chiamando gli endpoint riceviamo effettivamente le stesse risposte che avevamo prima. Se tutto funziona, passiamo alla prossima milestone",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
@@ -9,16 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luigi-giordano/express-blog-routing.git"
+    "url": "git+https://github.com/luigi-giordano/express-blog-api-crud.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luigi-giordano/express-blog-routing/issues"
+    "url": "https://github.com/luigi-giordano/express-blog-api-crud/issues"
   },
-  "homepage": "https://github.com/luigi-giordano/express-blog-routing#readme",
-  "description": "",
+  "homepage": "https://github.com/luigi-giordano/express-blog-api-crud#readme",
   "dependencies": {
     "express": "^4.21.2"
   }
