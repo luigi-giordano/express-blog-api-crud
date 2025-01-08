@@ -57,7 +57,7 @@ const update = (req, res) => {
     post[key] = req.body[key]
   }
 
-  res.json(post)
+  res.json(posts)
 }
 
 const modify = (req, res) => {
