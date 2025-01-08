@@ -22,20 +22,20 @@ const show = (req, res) => {
 
 const store = (req, res) => {
   console.log(req.body);
-  const id = posts.at(-1).id + 1;
+   const id = posts.at(-1).id + 1;
 
-  const newId = posts(posts.length -1).id + 1;
+   const newId = posts[posts.length -1].id + 1;
 
-  const newPost = {
-    id: newId,
-    title: req.body.title,
-    content: req.body.content,
-    author: req.body.author
-  }
+   const newPost = {
+     id: newId,
+     title: req.body.title,
+     content: req.body.content,
+     author: req.body.author
+   }
 
-  posts.push(newPost);
+   posts.push(newPost);
 
-  res.status(201);
+   res.status(201);
   
   res.json(posts);
 }
