@@ -43,11 +43,9 @@ const destroy = (req, res) => {
        error: "Not Found"
      })
    }
-
   posts.splice(posts.indexOf(singoloPost), 1)
   console.log(posts);
   res.sendStatus(204)
-  
 }
 
 module.exports = {
