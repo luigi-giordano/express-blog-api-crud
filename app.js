@@ -5,6 +5,9 @@ const postsRouter = require('./routers/posts.js');
 const port = 3001;
 
 app.use(express.json());
+
+
+
 app.use('/posts', postsRouter);
 
 
