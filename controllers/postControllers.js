@@ -56,12 +56,26 @@ const update = (req, res) => {
   for (let key in req.body){
     post[key] = req.body[key]
   }
-
   res.json(posts)
 }
 
 const modify = (req, res) => {
-  res.send("Modifico parzialmente un cibo in base all'id" + req.params.id)
+  const id = parseInt(req.params.id);
+  const post = posts.find(post => post.id === id);
+
+  if (!post) {
+    res.status(404);
+    return res.json({
+      message: 'Post non trovato',
+      status: 404,
+      error: 'Not Found'
+    })
+  }
+
+  for (let key in req.body){
+    post[key] = req.body[key]
+  }
+  res.json(posts)
 }
 
 const destroy = (req, res) => {
