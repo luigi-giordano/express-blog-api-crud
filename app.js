@@ -9,7 +9,7 @@ const cors = require('cors');
 const port = 3001;
 
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'http://localhost:5174'
 }));
 
 app.use(express.json());
@@ -17,6 +17,8 @@ app.use(express.json());
 // app.get('/', checkTime, (req, res) => {
 //   res.send('Server dei post')
 // })
+app.use(express.static('public'));
+
 app.use(checkTime);
 
 app.use('/posts', postsRouter);
